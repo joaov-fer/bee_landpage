@@ -347,16 +347,18 @@
             <div class="cta-box text-center">
                 <h2>Pronto para revolucionar suas vendas?</h2>
                 <p>Junte-se a centenas de lojistas que já estão faturando mais com o BEE.</p>
-                <form class="signup-form">
+                <form class="signup-form" action="https://formspree.io/f/mwpgqeor" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Nome da Loja" required>
+                        <input type="text" name="loja" placeholder="Nome da Loja" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Seu melhor e-mail" required>
+                        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="WhatsApp" required>
+                        <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
                     </div>
+                    <input type="hidden" name="_subject" value="🐝 Nova solicitação de loja no BEE!">
+                    <input type="hidden" name="_next" value="https://seusite.github.io/bee_landpage/?sucesso=1">
                     <button type="submit" class="btn-primary btn-block">Cadastrar Agora</button>
                 </form>
                 <p class="small-text">Ao se cadastrar, você concorda com nossos termos de uso.</p>

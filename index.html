@@ -358,10 +358,21 @@
                         <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
                     </div>
                     <input type="hidden" name="_subject" value="🐝 Nova solicitação de loja no BEE!">
-                    <input type="hidden" name="_next" value="https://seusite.github.io/bee_landpage/?sucesso=1">
                     <button type="submit" class="btn-primary btn-block">Cadastrar Agora</button>
                 </form>
                 <p class="small-text">Ao se cadastrar, você concorda com nossos termos de uso.</p>
+            </div>
+        </div>
+
+        <!-- Modal de Sucesso -->
+        <div id="successModal" class="success-modal">
+            <div class="success-modal-content">
+                <div class="success-icon">
+                    <i class="fa-solid fa-check-circle"></i>
+                </div>
+                <h3>Cadastro Enviado! 🐝</h3>
+                <p>Recebemos seus dados! Em breve entraremos em contato.</p>
+                <button class="btn-primary" onclick="closeSuccessModal()">OK</button>
             </div>
         </div>
     </section>

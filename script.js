@@ -1,5 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
+    // ==================== FORMSPREE FORM ====================
+    const form = document.querySelector('.signup-form');
+    const successModal = document.getElementById('successModal');
+
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const btn = form.querySelector('button[type="submit"]');
+            const btnText = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    successModal.classList.add('show');
+                } else {
+                    alert('Erro ao enviar. Tente novamente.');
+                }
+            } catch (error) {
+                alert('Erro ao enviar. Tente novamente.');
+            }
+
+            btn.textContent = btnText;
+            btn.disabled = false;
+        });
+    }
+
+    // Close modal
+    window.closeSuccessModal = () => {
+        successModal.classList.remove('show');
+    };
+
+    // Close on backdrop click
+    successModal?.addEventListener('click', (e) => {
+        if (e.target === successModal) closeSuccessModal();
+    });
+
+    // ==================== MOBILE MENU ====================
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 

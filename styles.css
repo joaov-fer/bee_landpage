@@ -1076,19 +1076,37 @@ a {
 
 .social-image .phone-mockup {
     position: absolute;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .social-image .chat-mockup {
     z-index: 2;
-    transform: rotate(-3deg) translateX(-30px);
+    transform: rotate(-5deg) translateX(-60px);
     border-color: #121212;
 }
 
 .social-image .feed-mockup {
-    z-index: 1;
-    transform: rotate(4deg) translateX(30px) translateY(40px);
-    opacity: 0.9;
+    z-index: 3;
+    transform: rotate(3deg) translateX(60px) translateY(-10px);
+    opacity: 1;
 }
+
+/* Container Hover Effects - Mimicking Segment Card */
+.social-image:hover .chat-mockup {
+    transform: translateX(-90px) rotate(-8deg) scale(1.05);
+    z-index: 4;
+    /* Bring to front */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.social-image:hover .feed-mockup {
+    transform: translateX(90px) rotate(6deg) translateY(-10px) scale(1.05);
+    z-index: 3;
+    filter: brightness(0.9);
+    /* Slightly darken the one going back */
+}
+
+
 
 @media (max-width: 992px) {
     .social-wrapper {
